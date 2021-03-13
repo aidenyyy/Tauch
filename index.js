@@ -4,7 +4,7 @@ const app = express();
 
 //route handler
 app.get('/', (req, res) => {
-    res.send({hi: 'there'});
+    res.send({niu: 'bi'});
 });
 
 const PORT = process.env.PORT || 5000;
