@@ -27,7 +27,7 @@ passport.use(
         },
         async (accessToken, refreshToken, profile, done) => {
 
-            const existingUser = await User.findOne({googleId: profile.id})
+            const existingUser = await User.findOne({googleId: profile.id});
             if(existingUser) {
                 //already have this userid in our database
                 return done(null, existingUser);
@@ -35,7 +35,7 @@ passport.use(
             
             //we don't have this userid in our database
             //create a new user in our database
-            const user = await new User({googleId: profile.id}).save()
+            const user = await new User({googleId: profile.id}).save();
             done(null, user);
         }
     )
