@@ -6,7 +6,15 @@ const keys = require('./.config/keys');
 require('./models/User');
 require('./services/passport');
 
-mongoose.connect(keys.mongoURI);
+//connecting to the database
+mongoose.connect(
+    keys.mongoURI,
+    {
+        useNewUrlParser: true,
+        useCreateIndex: true,
+        useUnifiedTopology: true,
+    }
+);
 
 //authRoutes
 const app = express();
