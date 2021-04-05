@@ -8,10 +8,11 @@
     "npm": "5.0.3"
   },
   "scripts": {
-    "start": "node index.js",
+    "index": "node index.js",
     "server": "nodemon index.js",
-    "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "client": "cd client && npm run start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "concurrently \"npm run index\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",
